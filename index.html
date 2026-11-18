@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Khusse 💗</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  background: linear-gradient(135deg,#ffe5ef,#fff5f8,#ffd6e7);
+  color: #743b58;
+  text-align: center;
+}
+
+.container {
+  max-width: 750px;
+  margin: auto;
+  padding: 25px 16px;
+}
+
+.card {
+  background: #fffafd;
+  padding: 30px 20px;
+  margin: 22px 0;
+  border-radius: 25px;
+  border: 1px solid #f3bfd4;
+  box-shadow: 0 8px 25px #d77b9b22;
+}
+
+h1 {
+  font-size: 48px;
+  color: #b44778;
+}
+
+h2 {
+  color: #b44778;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+button {
+  background: linear-gradient(120deg,#ed8bb5,#c54c83);
+  color: white;
+  border: none;
+  border-radius: 40px;
+  padding: 14px 25px;
+  font-size: 17px;
+  margin: 8px;
+  cursor: pointer;
+}
+
+.heart {
+  font-size: 35px;
+  animation: beat 1s infinite;
+}
+
+@keyframes beat {
+  50% { transform: scale(1.2); }
+}
+
+.hidden {
+  display: none;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 12px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.certificate {
+  border: 5px double #d77ba2;
+  padding: 20px;
+  background: #fff4f8;
+  border-radius: 15px;
+}
+
+#qr {
+  width: 180px;
+  margin-top: 15px;
+}
+
+input {
+  max-width: 100%;
+}
+
+footer {
+  padding: 25px;
+  color: #a45a7c;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<section class="card">
+  <p>♡ A LITTLE SURPRISE FOR YOU ♡</p>
+  <div class="heart">💗</div>
+  <h1>Hey Khusse!</h1>
+  <p>
+    To my cutest little sister,
+    you are my happiness and my little sunshine.
+    This website is only for you!
+  </p>
+
+  <button onclick="surprise()">
+    Open Your Surprise 🎁
+  </button>
+
+  <div id="message" class="hidden">
+    <h2>Surprise My Princess! 🌷</h2>
+    <p>
+      Dear Khusse, you are not just my little sister,
+      you are one of the most precious gifts in my life.
+      Keep smiling, keep shining and always follow your dreams.
+      I will always be there for you.
+    </p>
+    <h2>Lots of Love ❤️</h2>
+    <h3>From Your Brother Ashish</h3>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Our Beautiful Memories 📸</h2>
+  <p>Add your favourite pictures here.</p>
+
+  <div class="gallery">
+    <img src="photo1.jpg" alt="Memory 1">
+    <img src="photo2.jpg" alt="Memory 2">
+    <img src="photo3.jpg" alt="Memory 3">
+    <img src="photo4.jpg" alt="Memory 4">
+  </div>
+</section>
+
+<section class="card">
+  <h2>A Song For You 🎵</h2>
+  <audio controls loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+  <p>Our little happiness deserves a soundtrack 💕</p>
+</section>
+
+<section class="card">
+  <h2>Your Special Certificate 🏆</h2>
+
+  <div class="certificate" id="certificate">
+    <div class="heart">🌸</div>
+    <h2>World's Best Little Sister</h2>
+    <p>This certificate is proudly presented to</p>
+    <h1>Khusse</h1>
+    <p>
+      For being the cutest, sweetest and most
+      special little sister.
+    </p>
+    <h3>With Love, Ashish ❤️</h3>
+  </div>
+
+  <button onclick="downloadCertificate()">
+    Download Certificate
+  </button>
+</section>
+
+<section class="card">
+  <h2>Share This Little Surprise 💌</h2>
+  <p>Scan this QR code to open your website.</p>
+  <button onclick="createQR()">Create QR Code</button>
+  <div id="qrArea" class="hidden">
+    <img id="qr" alt="Website QR Code">
+    <p id="url"></p>
+    <button onclick="shareWebsite()">Share Website</button>
+  </div>
+</section>
+
+<footer>
+  Made with 💗 by Ashish for Khusse
+</footer>
+
+</div>
+
+<script>
+function surprise() {
+  document.getElementById("message").classList.remove("hidden");
+}
+
+function createQR() {
+  let link = window.location.href;
+
+  document.getElementById("qr").src =
+  "https://api.qrserver.com/v1/create-qr-code/?size=220x220&data="
+  + encodeURIComponent(link);
+
+  document.getElementById("url").innerText = link;
+  document.getElementById("qrArea").classList.remove("hidden");
+}
+
+async function shareWebsite() {
+  const data = {
+    title: "A Surprise for Khusse",
+    text: "A little surprise made with love ❤️",
+    url: window.location.href
+  };
+
+  if (navigator.share) {
+    await navigator.share(data);
+  } else {
+    await navigator.clipboard.writeText(window.location.href);
+    alert("Website link copied!");
+  }
+}
+
+function downloadCertificate() {
+  const content = `
+  <html>
+  <head>
+  <title>Khusse Certificate</title>
+  <style>
+  body {
+    text-align:center;
+    background:#fff0f6;
+    color:#963b68;
+    font-family:Georgia,serif;
+    padding:30px;
+  }
+  .box {
+    border:8px double #d77ba2;
+    padding:30px;
+    background:white;
+  }
+  </style>
+  </head>
+  <body>
+  <div class="box">
+  <h1>🌸 World's Best Little Sister 🌸</h1>
+  <h2>Khusse 💗</h2>
+  <p>With lots of love from your brother Ashish.</p>
+  </div>
+  </body>
+  </html>`;
+
+  let blob = new Blob([content], {type:"text/html"});
+  let a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "Khusse-Certificate.html";
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+</script>
+
+</body>
+</html>
