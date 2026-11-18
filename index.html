@@ -4,266 +4,160 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Khusse 💗</title>
-
+<title>Princess Khusse 👑</title>
 <style>
-* {
-  box-sizing: border-box;
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Georgia,serif;
+ text-align:center;
+ color:#8b315d;
+ background:linear-gradient(135deg,#ffe5f1,#fff5fa,#fbd0e5);
 }
-
-body {
-  margin: 0;
-  font-family: Georgia, serif;
-  background: linear-gradient(135deg,#ffe5ef,#fff5f8,#ffd6e7);
-  color: #743b58;
-  text-align: center;
+header{padding:55px 15px 30px}
+.crown{font-size:65px;animation:float 2s infinite}
+h1{font-size:38px;color:#b83d79}
+h2{color:#b83d79}
+p{font-size:19px;line-height:1.7}
+section{
+ background:#fffafd;
+ margin:22px 16px;
+ padding:28px 18px;
+ border:2px solid #f1bfd7;
+ border-radius:28px;
+ box-shadow:0 8px 22px #d98ab044;
 }
-
-.container {
-  max-width: 750px;
-  margin: auto;
-  padding: 25px 16px;
+button{
+ background:linear-gradient(120deg,#e75c9d,#ad4385);
+ color:white;border:0;border-radius:30px;
+ padding:14px 23px;font-size:17px;
+ margin:10px;cursor:pointer;
 }
-
-.card {
-  background: #fffafd;
-  padding: 30px 20px;
-  margin: 22px 0;
-  border-radius: 25px;
-  border: 1px solid #f3bfd4;
-  box-shadow: 0 8px 25px #d77b9b22;
+.gallery{
+ display:grid;grid-template-columns:1fr 1fr;gap:12px
 }
-
-h1 {
-  font-size: 48px;
-  color: #b44778;
+.gallery img{
+ width:100%;height:190px;object-fit:cover;
+ border-radius:18px;border:3px solid #f3bfd8;
 }
-
-h2 {
-  color: #b44778;
+.heart{
+ position:fixed;bottom:-30px;
+ animation:rise 6s linear forwards;
+ pointer-events:none;
 }
-
-p {
-  font-size: 18px;
-  line-height: 1.7;
+@keyframes rise{
+ to{transform:translateY(-110vh) rotate(360deg);opacity:0}
 }
-
-button {
-  background: linear-gradient(120deg,#ed8bb5,#c54c83);
-  color: white;
-  border: none;
-  border-radius: 40px;
-  padding: 14px 25px;
-  font-size: 17px;
-  margin: 8px;
-  cursor: pointer;
+@keyframes float{
+ 50%{transform:translateY(-12px)}
 }
-
-.heart {
-  font-size: 35px;
-  animation: beat 1s infinite;
-}
-
-@keyframes beat {
-  50% { transform: scale(1.2); }
-}
-
-.hidden {
-  display: none;
-}
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 12px;
-}
-
-.gallery img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 15px;
-}
-
-.certificate {
-  border: 5px double #d77ba2;
-  padding: 20px;
-  background: #fff4f8;
-  border-radius: 15px;
-}
-
-#qr {
-  width: 180px;
-  margin-top: 15px;
-}
-
-input {
-  max-width: 100%;
-}
-
-footer {
-  padding: 25px;
-  color: #a45a7c;
-}
+footer{padding:30px}
+#surprise{display:none;font-size:21px;color:#b83d79}
+input{max-width:100%;margin:12px}
 </style>
 </head>
-
 <body>
 
-<div class="container">
+<header>
+ <div class="crown">👑</div>
+ <h1>Princess Khusse 💗</h1>
+ <p>A little princess deserves a kingdom of happiness ✨</p>
+ <p>Welcome to your magical world!</p>
+ <button onclick="document.getElementById('letter').scrollIntoView({behavior:'smooth'})">
+ Open Your Gift 🎁
+ </button>
+</header>
 
-<section class="card">
-  <p>♡ A LITTLE SURPRISE FOR YOU ♡</p>
-  <div class="heart">💗</div>
-  <h1>Hey Khusse!</h1>
-  <p>
-    To my cutest little sister,
-    you are my happiness and my little sunshine.
-    This website is only for you!
-  </p>
-
-  <button onclick="surprise()">
-    Open Your Surprise 🎁
-  </button>
-
-  <div id="message" class="hidden">
-    <h2>Surprise My Princess! 🌷</h2>
-    <p>
-      Dear Khusse, you are not just my little sister,
-      you are one of the most precious gifts in my life.
-      Keep smiling, keep shining and always follow your dreams.
-      I will always be there for you.
-    </p>
-    <h2>Lots of Love ❤️</h2>
-    <h3>From Your Brother Ashish</h3>
-  </div>
+<section id="letter">
+ <h2>💌 A Letter From Your Brother</h2>
+ <p>Dear Khusse,</p>
+ <p>
+ You are not just my little sister, you are my little princess.
+ Your smile makes our world brighter.
+ I may tease you sometimes, but I will always stand beside you.
+ </p>
+ <p>Keep smiling, keep shining and always follow your dreams.</p>
+ <h2>Lots of love, Ashish ❤️</h2>
 </section>
 
-<section class="card">
-  <h2>Our Beautiful Memories 📸</h2>
-  <p>Add your favourite pictures here.</p>
-
-  <div class="gallery">
-    <img src="photo1.jpg" alt="Memory 1">
-    <img src="photo2.jpg" alt="Memory 2">
-    <img src="photo3.jpg" alt="Memory 3">
-    <img src="photo4.jpg" alt="Memory 4">
-  </div>
+<section>
+ <h2>Our Beautiful Memories 📸</h2>
+ <p>Our little collection of happiness</p>
+ <div class="gallery">
+  <img src="photo1.jpg" alt="Memory 1">
+  <img src="photo2.jpg" alt="Memory 2">
+  <img src="photo3.jpg" alt="Memory 3">
+ </div>
+ <p>Every picture tells a beautiful story 💕</p>
 </section>
 
-<section class="card">
-  <h2>A Song For You 🎵</h2>
-  <audio controls loop>
-    <source src="music.mp3" type="audio/mpeg">
-  </audio>
-  <p>Our little happiness deserves a soundtrack 💕</p>
+<section>
+ <h2>🎀 A Special Surprise</h2>
+ <button onclick="showSurprise()">Click For Your Surprise 💗</button>
+ <div id="surprise">
+  <p>👑 Khusse, you are officially the Princess of our family! 👑</p>
+  <p>Never forget how special you are. ❤️</p>
+ </div>
 </section>
 
-<section class="card">
-  <h2>Your Special Certificate 🏆</h2>
-
-  <div class="certificate" id="certificate">
-    <div class="heart">🌸</div>
-    <h2>World's Best Little Sister</h2>
-    <p>This certificate is proudly presented to</p>
-    <h1>Khusse</h1>
-    <p>
-      For being the cutest, sweetest and most
-      special little sister.
-    </p>
-    <h3>With Love, Ashish ❤️</h3>
-  </div>
-
-  <button onclick="downloadCertificate()">
-    Download Certificate
-  </button>
+<section>
+ <h2>🎵 Your Favourite Music</h2>
+ <p>Choose a song from your phone:</p>
+ <input type="file" id="musicFile" accept="audio/*">
+ <br>
+ <button onclick="playMusic()">Play Music ▶</button>
+ <button onclick="stopMusic()">Stop Music ⏸</button>
+ <audio id="music" controls style="width:100%;margin-top:12px"></audio>
 </section>
 
-<section class="card">
-  <h2>Share This Little Surprise 💌</h2>
-  <p>Scan this QR code to open your website.</p>
-  <button onclick="createQR()">Create QR Code</button>
-  <div id="qrArea" class="hidden">
-    <img id="qr" alt="Website QR Code">
-    <p id="url"></p>
-    <button onclick="shareWebsite()">Share Website</button>
-  </div>
+<section>
+ <h2>🏆 Princess Certificate</h2>
+ <p>This certificate belongs to our beautiful Princess Khusse.</p>
+ <button onclick="downloadCertificate()">Download Certificate 💝</button>
 </section>
 
 <footer>
-  Made with 💗 by Ashish for Khusse
+ <h2>Made with endless love ❤️</h2>
+ <p>From your brother Ashish 👑</p>
 </footer>
 
-</div>
-
 <script>
-function surprise() {
-  document.getElementById("message").classList.remove("hidden");
+function showSurprise(){
+ document.getElementById("surprise").style.display="block";
+ for(let i=0;i<25;i++) makeHeart();
 }
-
-function createQR() {
-  let link = window.location.href;
-
-  document.getElementById("qr").src =
-  "https://api.qrserver.com/v1/create-qr-code/?size=220x220&data="
-  + encodeURIComponent(link);
-
-  document.getElementById("url").innerText = link;
-  document.getElementById("qrArea").classList.remove("hidden");
+function makeHeart(){
+ let h=document.createElement("div");
+ h.className="heart";
+ h.textContent=["💗","💕","🦋","✨","👑"][Math.floor(Math.random()*5)];
+ h.style.left=Math.random()*100+"vw";
+ h.style.fontSize=(20+Math.random()*20)+"px";
+ document.body.appendChild(h);
+ setTimeout(()=>h.remove(),6000);
 }
+setInterval(makeHeart,1000);
 
-async function shareWebsite() {
-  const data = {
-    title: "A Surprise for Khusse",
-    text: "A little surprise made with love ❤️",
-    url: window.location.href
-  };
-
-  if (navigator.share) {
-    await navigator.share(data);
-  } else {
-    await navigator.clipboard.writeText(window.location.href);
-    alert("Website link copied!");
-  }
+const music=document.getElementById("music");
+document.getElementById("musicFile").addEventListener("change",function(){
+ if(this.files[0]){
+  music.src=URL.createObjectURL(this.files[0]);
+ }
+});
+function playMusic(){
+ if(music.src) music.play();
+ else alert("Please choose a song first!");
 }
+function stopMusic(){music.pause();}
 
-function downloadCertificate() {
-  const content = `
-  <html>
-  <head>
-  <title>Khusse Certificate</title>
-  <style>
-  body {
-    text-align:center;
-    background:#fff0f6;
-    color:#963b68;
-    font-family:Georgia,serif;
-    padding:30px;
-  }
-  .box {
-    border:8px double #d77ba2;
-    padding:30px;
-    background:white;
-  }
-  </style>
-  </head>
-  <body>
-  <div class="box">
-  <h1>🌸 World's Best Little Sister 🌸</h1>
-  <h2>Khusse 💗</h2>
-  <p>With lots of love from your brother Ashish.</p>
-  </div>
-  </body>
-  </html>`;
-
-  let blob = new Blob([content], {type:"text/html"});
-  let a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = "Khusse-Certificate.html";
-  a.click();
-  URL.revokeObjectURL(a.href);
+function downloadCertificate(){
+ const text=`PRINCESS CERTIFICATE\n\nThis certificate is proudly presented to\n\nPRINCESS KHUSSE 👑\n\nFor being the sweetest little sister.\n\nWith endless love,\nYour Brother Ashish ❤️`;
+ const blob=new Blob([text],{type:"text/plain"});
+ const a=document.createElement("a");
+ a.href=URL.createObjectURL(blob);
+ a.download="Princess-Khusse-Certificate.txt";
+ a.click();
+ URL.revokeObjectURL(a.href);
 }
 </script>
-
 </body>
 </html>
